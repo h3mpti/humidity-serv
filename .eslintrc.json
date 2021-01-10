@@ -15,7 +15,8 @@
               { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
             ]
           }
-        ]
+        ],
+        "semi": "error"
       }
     },
     {

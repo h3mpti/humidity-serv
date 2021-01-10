@@ -38,6 +38,12 @@
     "frontend-e2e": {
       "tags": [],
       "implicitDependencies": ["frontend"]
+    },
+    "models": {
+      "tags": []
+    },
+    "tinkerforge": {
+      "tags": []
     }
   }
 }
