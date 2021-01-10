@@ -35,6 +35,9 @@
     },
     "backend": {
       "tags": []
+    },
+    "data-acquisition": {
+      "tags": []
     }
   }
 }

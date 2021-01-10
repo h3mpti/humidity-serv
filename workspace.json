@@ -188,6 +188,65 @@
           }
         }
       }
+    },
+    "data-acquisition": {
+      "root": "apps/data-acquisition",
+      "sourceRoot": "apps/data-acquisition/src",
+      "projectType": "application",
+      "prefix": "data-acquisition",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/data-acquisition",
+            "main": "apps/data-acquisition/src/main.ts",
+            "tsConfig": "apps/data-acquisition/tsconfig.app.json",
+            "assets": [
+              "apps/data-acquisition/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/data-acquisition/src/environments/environment.ts",
+                  "with": "apps/data-acquisition/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "data-acquisition:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/data-acquisition/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/data-acquisition"
+          ],
+          "options": {
+            "jestConfig": "apps/data-acquisition/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
